@@ -50,12 +50,12 @@ exports[`block-columns-container columnsCount 2 uses padding correctly 1`] = `
           style="width: 100%;"
         >
           <td
-            style="box-sizing: content-box; vertical-align: middle; padding-left: 0px; padding-right: 6px;"
+            style="box-sizing: content-box; vertical-align: middle; padding-left: 0px; padding-right: 8px;"
           >
             bread
           </td>
           <td
-            style="box-sizing: content-box; vertical-align: middle; padding-left: 6px; padding-right: 0px;"
+            style="box-sizing: content-box; vertical-align: middle; padding-left: 8px; padding-right: 0px;"
           >
             tomato
           </td>
@@ -157,14 +157,7 @@ exports[`block-columns-container renders with default values 1`] = `
       >
         <tr
           style="width: 100%;"
-        >
-          <td
-            style="box-sizing: content-box; vertical-align: middle; padding-left: 0px; padding-right: 0px;"
-          />
-          <td
-            style="box-sizing: content-box; vertical-align: middle; padding-left: 0px; padding-right: 0px;"
-          />
-        </tr>
+        />
       </tbody>
     </table>
   </div>
