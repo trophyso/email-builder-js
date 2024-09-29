@@ -8,8 +8,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "npx tsc",
-    "test": "npx jest"
+    "build": "npx tsc"
   },
   "author": "carlos@usewaypoint.com",
   "license": "MIT",
