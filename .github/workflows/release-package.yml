@@ -5,13 +5,18 @@ on:
     branches: ['main']
 
 jobs:
-  build:
+  publish:
+    needs: build
     runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 18
+          registry-url: https://npm.pkg.github.com/
       - run: |
           npm ci
           (cd ./packages/block-avatar;pwd;npm ci)
@@ -29,19 +34,6 @@ jobs:
       - run: npx prettier . --check
       - run: npm test
       - run: ./node_modules/.bin/tsc --noEmit
-  publish-gpr:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      packages: write
-      contents: read
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 16
-          registry-url: https://npm.pkg.github.com/
-      - run: npm ci
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
