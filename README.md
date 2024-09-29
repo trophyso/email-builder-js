@@ -58,3 +58,5 @@ npm install
 
 This will symlink this email-builder-js `dist` folder to the `node_modules` folder of the Trophy
 app, so you only need to `npm run build` to see the changes immediately reflected in the Trophy app.
+
+Packages are built automatically when pushed to the `main` branch.
