@@ -17,10 +17,7 @@ const PADDING_SCHEMA = z
   .optional()
   .nullable();
 
-const FIXED_WIDTHS_SCHEMA = z
-  .array(z.number().nullish())
-  .optional()
-  .nullable();
+const FIXED_WIDTHS_SCHEMA = z.array(z.number().nullish()).optional().nullable();
 
 const getPadding = (padding: z.infer<typeof PADDING_SCHEMA>) =>
   padding ? `${padding.top}px ${padding.right}px ${padding.bottom}px ${padding.left}px` : undefined;
@@ -122,8 +119,7 @@ function getPaddingBefore(index: number, columns: Props['columns'], { columnsGap
 function getPaddingAfter(index: number, columns: Props['columns'], { columnsGap }: Props['props']) {
   if (index === 0) {
     return (2 * columnsGap) / 3;
-  }
-  else if (index === (columns?.length || 0) - 1) {
+  } else if (index === (columns?.length || 0) - 1) {
     return 0;
   }
   return columnsGap / 3;

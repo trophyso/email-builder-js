@@ -13,13 +13,13 @@ npm install @trophy/email-builder-js
 
 ```typescript
 import { EmailBuilder } from '@trophy/email-builder-js';
-import { renderToStaticMarkup, TReaderDocument } from "@trophyso/email-builder-js";
+import { renderToStaticMarkup, TReaderDocument } from '@trophyso/email-builder-js';
 
 const document: TReaderDocument = {
   // Document content here
 };
 
-const html = renderToStaticMarkup(document, { rootBlockId: 'root' })
+const html = renderToStaticMarkup(document, { rootBlockId: 'root' });
 ```
 
 ### Development
