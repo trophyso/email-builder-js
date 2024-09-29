@@ -3,7 +3,9 @@ name: Node.js Package
 on:
   push:
     branches: ['main']
-
+concurrency:
+  group: 'package'
+  cancel-in-progress: true
 jobs:
   publish:
     runs-on: ubuntu-latest

@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es2015",
-    "module": "esnext",
+    "module": "commonjs",
     "lib": [],
     "moduleResolution": "node",
     "jsx": "react",
@@ -19,5 +19,7 @@
     "noFallthroughCasesInSwitch": true,
     "allowSyntheticDefaultImports": true
   },
-  "exclude": ["dist"]
+  "include": [
+    "packages/index.ts"
+  ]
 }
