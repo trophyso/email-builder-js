@@ -76,6 +76,10 @@ ${body}</tbody>
 </table>`;
   }
 
+  paragraph(text: string) {
+    return `<p style="margin: 0">${text}</p>`;
+  }
+
   link(href: string, title: string | null, text: string) {
     if (!title) {
       return `<a href="${href}" target="_blank">${text}</a>`;

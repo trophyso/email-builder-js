@@ -1,6 +1,6 @@
 {
   "name": "@trophyso/email-builder-js",
-  "version": "0.1.9",
+  "version": "0.1.11",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "target": "ES2022",
@@ -33,5 +33,10 @@
   },
   "publishConfig": {
     "@trophyso:registry": "https://npm.pkg.github.com"
+  },
+  "dependencies": {
+    "@usewaypoint/email-builder": "^0.0.8",
+    "insane": "^2.6.2",
+    "marked": "^12.0.2"
   }
 }
