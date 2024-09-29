@@ -11,7 +11,7 @@
     "build": "npx tsc",
     "test": "npx jest",
     "lint": "npx prettier .",
-    "postinstall": "find packages -maxdepth 2 -name package.json -execdir npm i ;"
+    "postinstall": "find packages -maxdepth 2 -name package.json -execdir npm i ';'"
   },
   "author": "carlos@usewaypoint.com",
   "license": "MIT",
