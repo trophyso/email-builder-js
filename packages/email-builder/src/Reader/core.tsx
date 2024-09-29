@@ -1,19 +1,19 @@
 import React, { createContext, useContext } from 'react';
 import { z } from 'zod';
 
-import { Avatar, AvatarPropsSchema } from '@usewaypoint/block-avatar';
-import { Button, ButtonPropsSchema } from '@usewaypoint/block-button';
-import { Divider, DividerPropsSchema } from '@usewaypoint/block-divider';
-import { Heading, HeadingPropsSchema } from '@usewaypoint/block-heading';
-import { Html, HtmlPropsSchema } from '@usewaypoint/block-html';
-import { Image, ImagePropsSchema } from '@usewaypoint/block-image';
-import { Spacer, SpacerPropsSchema } from '@usewaypoint/block-spacer';
-import { Text, TextPropsSchema } from '@usewaypoint/block-text';
+import { Avatar, AvatarPropsSchema } from '../../../block-avatar/src';
+import { Button, ButtonPropsSchema } from '../../../block-button/src';
+import { Divider, DividerPropsSchema } from '../../../block-divider/src';
+import { Heading, HeadingPropsSchema } from '../../../block-heading/src';
+import { Html, HtmlPropsSchema } from '../../../block-html/src';
+import { Image, ImagePropsSchema } from '../../../block-image/src';
+import { Spacer, SpacerPropsSchema } from '../../../block-spacer/src';
+import { Text, TextPropsSchema } from '../../../block-text/src';
 import {
   buildBlockComponent,
   buildBlockConfigurationDictionary,
   buildBlockConfigurationSchema,
-} from '@usewaypoint/document-core';
+} from '../../../document-core/src';
 
 import ColumnsContainerPropsSchema from '../blocks/ColumnsContainer/ColumnsContainerPropsSchema';
 import ColumnsContainerReader from '../blocks/ColumnsContainer/ColumnsContainerReader';
