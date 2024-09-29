@@ -24,6 +24,9 @@ const html = renderToStaticMarkup(document, { rootBlockId: 'root' })
 
 ### Development
 
+This package is written in TypeScript. `npm install` will install all packages, including in nested
+folders (each block is its own package, with its own `package.json`).
+
 All code is tested using jest. To run the tests, run:
 
 ```console
