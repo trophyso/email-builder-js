@@ -20,6 +20,6 @@
     "allowSyntheticDefaultImports": true
   },
   "include": [
-    "packages/index.ts"
+    "index.ts"
   ]
 }
