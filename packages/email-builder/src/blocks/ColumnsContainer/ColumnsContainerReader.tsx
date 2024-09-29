@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { ColumnsContainer as BaseColumnsContainer } from '../../../../block-columns-container/src';
-
 import { ReaderBlock } from '../../Reader/core';
 
 import { ColumnsContainerProps } from './ColumnsContainerPropsSchema';

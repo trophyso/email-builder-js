@@ -14,7 +14,6 @@ import {
   buildBlockConfigurationDictionary,
   buildBlockConfigurationSchema,
 } from '../../../document-core/src';
-
 import ColumnsContainerPropsSchema from '../blocks/ColumnsContainer/ColumnsContainerPropsSchema';
 import ColumnsContainerReader from '../blocks/ColumnsContainer/ColumnsContainerReader';
 import { ContainerPropsSchema } from '../blocks/Container/ContainerPropsSchema';

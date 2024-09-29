@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Container as BaseContainer } from '../../../../block-container/src';
-
 import { ReaderBlock } from '../../Reader/core';
 
 import { ContainerProps } from './ContainerPropsSchema';
