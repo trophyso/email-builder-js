@@ -33,6 +33,9 @@ All code is tested using jest. To run the tests, run:
 npm test
 ```
 
+After making changes to a component, if you've verified that it looks correct, simply delete the
+`__snapshots__` folder and run the tests again to update the snapshots.
+
 To build the package, tick the version number and run:
 
 ```console
