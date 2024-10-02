@@ -110,16 +110,11 @@ function getPaddingBefore(index: number, columns: Props['columns'], { columnsGap
   if (index === 0) {
     return 0;
   }
-  if (index === (columns?.length || 0) - 1) {
-    return (2 * columnsGap) / 3;
-  }
   return columnsGap / 3;
 }
 
 function getPaddingAfter(index: number, columns: Props['columns'], { columnsGap }: Props['props']) {
-  if (index === 0) {
-    return (2 * columnsGap) / 3;
-  } else if (index === (columns?.length || 0) - 1) {
+  if (index === (columns?.length || 0) - 1) {
     return 0;
   }
   return columnsGap / 3;
