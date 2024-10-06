@@ -26,6 +26,8 @@ export const ContainerPropsSchema = z.object({
       backgroundColor: COLOR_SCHEMA,
       borderColor: COLOR_SCHEMA,
       borderRadius: z.number().optional().nullable(),
+      width: z.number().optional().nullable(),
+      margin: z.string().optional().nullable(),
       padding: PADDING_SCHEMA,
     })
     .optional()
@@ -50,6 +52,8 @@ export function Container({ style, children }: ContainerProps) {
     border: getBorder(style),
     borderRadius: style?.borderRadius ?? undefined,
     padding: getPadding(style?.padding),
+    width: style?.width ? `${style.width}px` : undefined,
+    margin: style?.margin ?? undefined,
   };
   if (!children) {
     return <div style={wStyle} />;
