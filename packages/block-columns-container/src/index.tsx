@@ -17,7 +17,10 @@ const PADDING_SCHEMA = z
   .optional()
   .nullable();
 
-const FIXED_WIDTHS_SCHEMA = z.array(z.number().nullish()).optional().nullable();
+const FIXED_WIDTHS_SCHEMA = z
+  .array(z.union([z.number(), z.string()]).nullish())
+  .optional()
+  .nullable();
 
 const getPadding = (padding: z.infer<typeof PADDING_SCHEMA>) =>
   padding ? `${padding.top}px ${padding.right}px ${padding.bottom}px ${padding.left}px` : undefined;
