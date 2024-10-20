@@ -95,10 +95,11 @@ export function Heading({ props, style }: HeadingProps) {
     backgroundColor: style?.backgroundColor ?? undefined,
     fontWeight: style?.fontWeight ?? 'bold',
     textAlign: style?.textAlign ?? undefined,
-    margin: 0,
+    margin: '0 0 0.5em 0',
     fontFamily: getFontFamily(style?.fontFamily),
     fontSize: getFontSize(level),
     padding: getPadding(style?.padding),
+    lineHeight: '1.15',
   };
   switch (level) {
     case 'h1':
