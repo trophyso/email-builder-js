@@ -113,10 +113,10 @@ export function Heading({ props, style }: HeadingProps) {
 function getFontSize(level: 'h1' | 'h2' | 'h3') {
   switch (level) {
     case 'h1':
-      return 32;
-    case 'h2':
       return 24;
+    case 'h2':
+      return 19;
     case 'h3':
-      return 20;
+      return 16;
   }
 }
