@@ -17,16 +17,7 @@ describe('block-columns-container', () => {
 
     it('uses padding correctly', () => {
       const columns = [<>bread</>, <>tomato</>];
-      expect(
-        render(
-          <ColumnsContainer
-            props={{
-              columnsGap: 12,
-            }}
-            columns={columns}
-          />
-        ).asFragment()
-      ).toMatchSnapshot();
+      expect(render(<ColumnsContainer columns={columns} />).asFragment()).toMatchSnapshot();
     });
   });
 
@@ -38,16 +29,7 @@ describe('block-columns-container', () => {
 
     it('uses padding correctly', () => {
       const columns = [<>bread</>, <>tomato</>, <>lettuce</>];
-      expect(
-        render(
-          <ColumnsContainer
-            props={{
-              columnsGap: 12,
-            }}
-            columns={columns}
-          />
-        ).asFragment()
-      ).toMatchSnapshot();
+      expect(render(<ColumnsContainer columns={columns} />).asFragment()).toMatchSnapshot();
     });
   });
 });

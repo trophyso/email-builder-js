@@ -17,12 +17,12 @@ exports[`block-columns-container columnsCount 2 renders column children 1`] = `
           style="width: 100%;"
         >
           <td
-            style="box-sizing: content-box; vertical-align: middle; padding-left: 0px; padding-right: 0px;"
+            style="box-sizing: content-box; vertical-align: middle;"
           >
             bread
           </td>
           <td
-            style="box-sizing: content-box; vertical-align: middle; padding-left: 0px; padding-right: 0px;"
+            style="box-sizing: content-box; vertical-align: middle;"
           >
             tomato
           </td>
@@ -50,12 +50,12 @@ exports[`block-columns-container columnsCount 2 uses padding correctly 1`] = `
           style="width: 100%;"
         >
           <td
-            style="box-sizing: content-box; vertical-align: middle; padding-left: 0px; padding-right: 4px;"
+            style="box-sizing: content-box; vertical-align: middle;"
           >
             bread
           </td>
           <td
-            style="box-sizing: content-box; vertical-align: middle; padding-left: 4px; padding-right: 0px;"
+            style="box-sizing: content-box; vertical-align: middle;"
           >
             tomato
           </td>
@@ -83,17 +83,17 @@ exports[`block-columns-container columnsCount 3 renders column children 1`] = `
           style="width: 100%;"
         >
           <td
-            style="box-sizing: content-box; vertical-align: middle; padding-left: 0px; padding-right: 0px;"
+            style="box-sizing: content-box; vertical-align: middle;"
           >
             bread
           </td>
           <td
-            style="box-sizing: content-box; vertical-align: middle; padding-left: 0px; padding-right: 0px;"
+            style="box-sizing: content-box; vertical-align: middle;"
           >
             tomato
           </td>
           <td
-            style="box-sizing: content-box; vertical-align: middle; padding-left: 0px; padding-right: 0px;"
+            style="box-sizing: content-box; vertical-align: middle;"
           >
             lettuce
           </td>
@@ -121,17 +121,17 @@ exports[`block-columns-container columnsCount 3 uses padding correctly 1`] = `
           style="width: 100%;"
         >
           <td
-            style="box-sizing: content-box; vertical-align: middle; padding-left: 0px; padding-right: 4px;"
+            style="box-sizing: content-box; vertical-align: middle;"
           >
             bread
           </td>
           <td
-            style="box-sizing: content-box; vertical-align: middle; padding-left: 4px; padding-right: 4px;"
+            style="box-sizing: content-box; vertical-align: middle;"
           >
             tomato
           </td>
           <td
-            style="box-sizing: content-box; vertical-align: middle; padding-left: 4px; padding-right: 0px;"
+            style="box-sizing: content-box; vertical-align: middle;"
           >
             lettuce
           </td>

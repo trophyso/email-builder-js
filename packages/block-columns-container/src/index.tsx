@@ -36,7 +36,6 @@ export const ColumnsContainerPropsSchema = z.object({
   props: z
     .object({
       fixedWidths: FIXED_WIDTHS_SCHEMA,
-      columnsGap: z.number().optional().nullable(),
       contentAlignment: z.enum(['top', 'middle', 'bottom']).optional().nullable(),
     })
     .optional()
@@ -49,7 +48,6 @@ export type ColumnsContainerProps = z.infer<typeof ColumnsContainerPropsSchema> 
 };
 
 const ColumnsContainerPropsDefaults = {
-  columnsGap: 0,
   contentAlignment: 'middle',
 } as const;
 
@@ -60,7 +58,6 @@ export function ColumnsContainer({ style, columns, props }: ColumnsContainerProp
   };
 
   const blockProps = {
-    columnsGap: props?.columnsGap ?? ColumnsContainerPropsDefaults.columnsGap,
     contentAlignment: props?.contentAlignment ?? ColumnsContainerPropsDefaults.contentAlignment,
     fixedWidths: props?.fixedWidths,
   };
@@ -89,7 +86,6 @@ export function ColumnsContainer({ style, columns, props }: ColumnsContainerProp
 type Props = {
   props: {
     fixedWidths: z.infer<typeof FIXED_WIDTHS_SCHEMA>;
-    columnsGap: number;
     contentAlignment: 'top' | 'middle' | 'bottom';
   };
   index: number;
@@ -101,24 +97,8 @@ function TableCell({ index, props, columns }: Props) {
   const style: CSSProperties = {
     boxSizing: 'content-box',
     verticalAlign: contentAlignment,
-    paddingLeft: getPaddingBefore(index, columns, props),
-    paddingRight: getPaddingAfter(index, columns, props),
     width: props.fixedWidths?.[index] ?? undefined,
   };
   const children = (columns && columns[index]) ?? null;
   return <td style={style}>{children}</td>;
-}
-
-function getPaddingBefore(index: number, columns: Props['columns'], { columnsGap }: Props['props']) {
-  if (index === 0) {
-    return 0;
-  }
-  return columnsGap / 3;
-}
-
-function getPaddingAfter(index: number, columns: Props['columns'], { columnsGap }: Props['props']) {
-  if (index === (columns?.length || 0) - 1) {
-    return 0;
-  }
-  return columnsGap / 3;
 }
