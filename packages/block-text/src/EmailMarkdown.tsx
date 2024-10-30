@@ -1,6 +1,6 @@
 import insane, { AllowedTags } from 'insane';
 import { marked, Renderer } from 'marked';
-import React, { CSSProperties, useMemo } from 'react';
+import React, { CSSProperties } from 'react';
 
 const ALLOWED_TAGS: AllowedTags[] = [
   'a',
@@ -108,6 +108,6 @@ type Props = {
   markdown: string;
 };
 export default function EmailMarkdown({ markdown, ...props }: Props) {
-  const data = useMemo(() => renderMarkdownString(markdown), [markdown]);
+  const data = renderMarkdownString(markdown);
   return <div {...props} dangerouslySetInnerHTML={{ __html: data }} />;
 }

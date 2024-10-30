@@ -1,4 +1,4 @@
-import React, { createContext, useContext } from 'react';
+import React from 'react';
 import { z } from 'zod';
 
 import { Avatar, AvatarPropsSchema } from '../../../block-avatar/src';
@@ -20,12 +20,6 @@ import { ContainerPropsSchema } from '../blocks/Container/ContainerPropsSchema';
 import ContainerReader from '../blocks/Container/ContainerReader';
 import { EmailLayoutPropsSchema } from '../blocks/EmailLayout/EmailLayoutPropsSchema';
 import EmailLayoutReader from '../blocks/EmailLayout/EmailLayoutReader';
-
-const ReaderContext = createContext<TReaderDocument>({});
-
-function useReaderDocument() {
-  return useContext(ReaderContext);
-}
 
 const READER_DICTIONARY = buildBlockConfigurationDictionary({
   ColumnsContainer: {
@@ -83,9 +77,10 @@ export type TReaderDocument = Record<string, TReaderBlock>;
 
 const BaseReaderBlock = buildBlockComponent(READER_DICTIONARY);
 
+let document: TReaderDocument;
+
 export type TReaderBlockProps = { id: string };
 export function ReaderBlock({ id }: TReaderBlockProps) {
-  const document = useReaderDocument();
   return <BaseReaderBlock {...document[id]} />;
 }
 
@@ -93,10 +88,8 @@ export type TReaderProps = {
   document: Record<string, z.infer<typeof ReaderBlockSchema>>;
   rootBlockId: string;
 };
-export default function Reader({ document, rootBlockId }: TReaderProps) {
-  return (
-    <ReaderContext.Provider value={document}>
-      <ReaderBlock id={rootBlockId} />
-    </ReaderContext.Provider>
-  );
+
+export default function Reader({ document: docToRender, rootBlockId }: TReaderProps) {
+  document = docToRender;
+  return <ReaderBlock id={rootBlockId} />;
 }
