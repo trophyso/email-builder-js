@@ -18,7 +18,7 @@ const FONT_FAMILY_SCHEMA = z
   .nullable()
   .optional();
 
-function getFontFamily(fontFamily: z.infer<typeof FONT_FAMILY_SCHEMA>) {
+export function getFontFamily(fontFamily: z.infer<typeof FONT_FAMILY_SCHEMA>) {
   switch (fontFamily) {
     case 'MODERN_SANS':
       return '"Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial, sans-serif';
