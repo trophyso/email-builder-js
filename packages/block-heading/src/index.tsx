@@ -1,6 +1,8 @@
 import React, { CSSProperties } from 'react';
 import { z } from 'zod';
 
+import EmailMarkdown from './EmailMarkdown';
+
 const COLOR_SCHEMA = z
   .string()
   .regex(/^#[0-9a-fA-F]{6}$/)
@@ -64,6 +66,7 @@ export const HeadingPropsSchema = z.object({
     .object({
       text: z.string().optional().nullable(),
       level: z.enum(['h1', 'h2', 'h3']).optional().nullable(),
+      markdown: z.boolean().optional().nullable(),
     })
     .optional()
     .nullable(),
@@ -101,13 +104,20 @@ export function Heading({ props, style }: HeadingProps) {
     padding: getPadding(style?.padding),
     lineHeight: '1.15',
   };
+
+  let content: React.ReactNode = text;
+
+  if (props?.markdown) {
+    content = <EmailMarkdown markdown={text} />;
+  }
+
   switch (level) {
     case 'h1':
-      return <h1 style={hStyle}>{text}</h1>;
+      return <h1 style={hStyle}>{content}</h1>;
     case 'h2':
-      return <h2 style={hStyle}>{text}</h2>;
+      return <h2 style={hStyle}>{content}</h2>;
     case 'h3':
-      return <h3 style={hStyle}>{text}</h3>;
+      return <h3 style={hStyle}>{content}</h3>;
   }
 }
 
