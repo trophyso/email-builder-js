@@ -68,6 +68,7 @@ export function Image({ style, props }: ImageProps) {
         verticalAlign: props?.contentAlignment ?? 'middle',
         display: 'inline-block',
         maxWidth: '100%',
+        objectFit: 'contain',
       }}
     />
   );
