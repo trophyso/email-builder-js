@@ -29,6 +29,10 @@ export const ContainerPropsSchema = z.object({
       width: z.number().optional().nullable(),
       margin: z.string().optional().nullable(),
       padding: PADDING_SCHEMA,
+      height: z.number().optional().nullable(),
+      display: z.string().optional().nullable(),
+      verticalAlign: z.string().optional().nullable(),
+      textAlign: z.string().optional().nullable(),
     })
     .optional()
     .nullable(),
@@ -54,6 +58,10 @@ export function Container({ style, children }: ContainerProps) {
     padding: getPadding(style?.padding),
     width: style?.width ? `${style.width}px` : undefined,
     margin: style?.margin ?? undefined,
+    height: style?.height ? `${style.height}px` : undefined,
+    display: style?.display ?? undefined,
+    verticalAlign: style?.verticalAlign ?? undefined,
+    textAlign: (style?.textAlign as CSSProperties['textAlign']) ?? undefined,
   };
   if (!children) {
     return <div style={wStyle} />;
