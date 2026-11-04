@@ -31,6 +31,7 @@ export const ImagePropsSchema = z.object({
     .object({
       width: z.number().optional().nullable(),
       height: z.number().optional().nullable(),
+      fullWidth: z.boolean().optional().nullable(),
       url: z.string().optional().nullable(),
       alt: z.string().optional().nullable(),
       linkHref: z.string().optional().nullable(),
@@ -50,8 +51,10 @@ export function Image({ style, props }: ImageProps) {
   };
 
   const linkHref = props?.linkHref ?? null;
-  const width = props?.width ?? undefined;
-  const height = props?.height ?? undefined;
+  // Full width fills the container, and the height follows the image's ratio.
+  const fullWidth = props?.fullWidth ?? false;
+  const width = fullWidth ? '100%' : props?.width ?? undefined;
+  const height = fullWidth ? undefined : props?.height ?? undefined;
 
   const imageElement = (
     <img
@@ -61,12 +64,12 @@ export function Image({ style, props }: ImageProps) {
       height={height}
       style={{
         width,
-        height,
+        height: fullWidth ? 'auto' : height,
         outline: 'none',
         border: 'none',
         textDecoration: 'none',
         verticalAlign: props?.contentAlignment ?? 'middle',
-        display: 'inline-block',
+        display: fullWidth ? 'block' : 'inline-block',
         maxWidth: '100%',
         objectFit: 'contain',
       }}
