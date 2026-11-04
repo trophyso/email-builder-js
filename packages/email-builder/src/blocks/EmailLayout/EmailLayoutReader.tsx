@@ -19,6 +19,8 @@ function getFontFamily(fontFamily: EmailLayoutProps['fontFamily']) {
       return 'Bahnschrift, "DIN Alternate", "Franklin Gothic Medium", "Nimbus Sans Narrow", sans-serif-condensed, sans-serif';
     case 'ROUNDED_SANS':
       return 'ui-rounded, "Hiragino Maru Gothic ProN", Quicksand, Comfortaa, Manjari, "Arial Rounded MT Bold", Calibri, source-sans-pro, sans-serif';
+    case 'SYSTEM_SANS':
+      return 'ui-sans-serif, Arial, sans-serif';
     case 'MODERN_SERIF':
       return 'Charter, "Bitstream Charter", "Sitka Text", Cambria, serif';
     case 'BOOK_SERIF':

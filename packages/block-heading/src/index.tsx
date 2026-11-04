@@ -30,6 +30,7 @@ const FONT_FAMILY_SCHEMA = z
     'GEOMETRIC_SANS',
     'HEAVY_SANS',
     'ROUNDED_SANS',
+    'SYSTEM_SANS',
     'MODERN_SERIF',
     'BOOK_SERIF',
     'MONOSPACE',
@@ -51,6 +52,8 @@ function getFontFamily(fontFamily: z.infer<typeof FONT_FAMILY_SCHEMA>) {
       return 'Bahnschrift, "DIN Alternate", "Franklin Gothic Medium", "Nimbus Sans Narrow", sans-serif-condensed, sans-serif';
     case 'ROUNDED_SANS':
       return 'ui-rounded, "Hiragino Maru Gothic ProN", Quicksand, Comfortaa, Manjari, "Arial Rounded MT Bold", Calibri, source-sans-pro, sans-serif';
+    case 'SYSTEM_SANS':
+      return 'ui-sans-serif, Arial, sans-serif';
     case 'MODERN_SERIF':
       return 'Charter, "Bitstream Charter", "Sitka Text", Cambria, serif';
     case 'BOOK_SERIF':

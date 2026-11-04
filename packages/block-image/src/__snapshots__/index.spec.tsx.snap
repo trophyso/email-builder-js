@@ -6,7 +6,7 @@ exports[`block-image renders with default values 1`] = `
     <img
       alt=""
       src=""
-      style="outline: none; text-decoration: none; vertical-align: middle; display: inline-block; max-width: 100%;"
+      style="outline: none; text-decoration: none; vertical-align: middle; display: inline-block; max-width: 100%; object-fit: contain;"
     />
   </div>
 </DocumentFragment>
